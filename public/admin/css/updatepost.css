@@ -1,0 +1,149 @@
+:root {
+  --primaryColor: rgb(40, 106, 247);
+  --mainWhite: #ffffff;
+  --mainGrey: #ececec;
+  --mainBlack: #000000;
+  --color-primary: #263238;
+  --color-secondary: darkgrey;
+
+  --color-second: #5EC6FF;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all .5s ease;
+  }
+
+
+    a{
+        text-decoration: none;
+        color: var(--color-primary);
+      
+      }
+.create-page{
+    width: 85%;
+    height:auto;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.create-form{
+    position: relative;
+    width: 100%;
+    margin: 0 auto 100px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;	
+	  float:left;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    
+
+}
+.create-form input{
+    background: var(--mainWhite);
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+    
+}
+
+.create-form select{
+  background: var(--mainWhite);
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #e1e1e1;
+  outline: 0;
+  border-radius: 10px;
+  
+}
+.create-form button{
+  text-transform: uppercase;
+  outline: 0;
+  background: #4b4276;
+  width: 20%;
+  padding: 10px;
+  color: var(--mainWhite);
+  cursor: pointer;
+  border-radius: 10px;
+  float: right;
+  border: 1px solid #5EC6FF;
+  margin-right: 40%;
+
+}
+
+.create-form textarea{
+  background: var(--mainWhite);
+  width: 100%;
+  height: 200px;
+  margin: 0 0 10px;
+  padding: 12px;
+  box-sizing: border-box;
+   border: 1px solid #e1e1e1;
+  outline: 0;
+  border-radius: 10px;
+ 
+}
+.create-form button:hover,.form.button :active{
+   color: var(--mainWhite);
+}
+.create-form img{
+height: 80px;
+ width: 80px;
+float: left;
+margin-top: -15px;
+margin-bottom: 10px;
+border-radius: 10px;
+}
+.create-form .lblphoto{
+  float: left;
+  margin-left:  10px;
+}
+ .profile{
+  height: 450px;
+  width: 200px;
+}
+@media only screen and (min-width: 300px) and (max-width: 600px){
+    .create-page{
+    width:100%;
+    height: auto;
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-top: 15px;
+    z-index: 2;
+   
+    }
+    .create-form{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px
+    }
+     
+       .create-form img{
+        height: 45px;
+        width: 45px;
+       margin-top: 5px;
+        
+      }
+      .create-form input{
+        margin: 0 0 10px;
+        padding: 6px;  
+    }
+    .create-form select{
+       margin: 0 0 10px;
+      padding: 6px; 
+    }
+    .create-form button{
+      padding: 6px;
+      margin-right: 0;
+      width:100%;
+  }
+  }
+
+  
+
+
