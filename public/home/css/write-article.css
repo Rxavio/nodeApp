@@ -1,0 +1,102 @@
+:root {
+    --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainGrey: #ececec;
+    --mainBlack: #000000;
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+  
+    --color-second: #5EC6FF;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
+    }
+  
+  .create-article-page{
+    width: 50%;
+    height:auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .article-form{
+    position: relative;
+    z-index: 1;
+    background: rgb(10, 181, 211);
+    width: 100%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-sizing: border-box; 
+    float:left;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+  
+  }
+  .article-form h3,label{
+    color: white;
+  }
+  .article-form input{
+    background: var(--mainWhite);
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+   
+  }
+  .article-form textarea{
+    background: var(--mainWhite);
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+    margin-top: 20px;
+  
+    
+  }
+  .article-form button{
+    text-transform: uppercase;
+    border: 2px solid #e1e1e1;
+    background: rgb(10, 181, 211);
+    width: 20%;
+    padding: 8px;
+    color: var(--mainWhite);
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+  
+  }
+  .article-form button:hover,.form.button :active{
+    color: var(--mainBlack);
+  }  
+   .article-form .info-card{
+    height: auto;         
+    box-sizing: border-box; 
+    padding: 45px 30px;
+    width: 100%;
+    text-align: center; 
+    background: var(--mainWhite);
+    border-radius: 10px;
+  
+  }
+  @media only screen and (min-width: 300px) and (max-width: 600px){
+    .create-article-page{
+      width:100%;
+      margin-bottom: 0px;
+      padding: 10px;
+      margin-top: 5px;
+    }
+    .article-form{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px; 
+    }
+    .article-form button{
+      width:100%;
+    }
+  }
+  

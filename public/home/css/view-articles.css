@@ -1,0 +1,225 @@
+:root {
+    --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainGrey: #ececec;
+    --mainBlack: #000000;
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+  
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
+    }
+  .shared-article-page{
+    background: #ffffff;
+    width: 55%;
+    height:auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  .shared-form{
+    position: relative;
+    z-index: 1;
+    background: rgb(10, 181, 211);
+    width: 100%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-sizing: border-box;
+    float:left;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .shared-form img{
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+  }
+  
+   .shared-form h3{
+   color: var(--mainWhite);
+  }
+  
+  .info-card .more{
+      /* border-bottom:1px solid #e1e1e1; */
+      height: 35px;    
+  }
+  
+  a{
+    text-decoration: none;
+    color: var(--mainBlack);
+  }
+  
+  .shared-form .info-card{
+    height: auto;         
+    box-sizing: border-box; 
+    padding: 45px 10px;
+    width: 100%;
+    text-align: center; 
+    padding: 10px 10px;
+    background: var(--mainWhite);
+    margin-top: 10px;
+    border-radius: 10px;
+  
+  }
+  .info-card .profile{
+    width: 50px;
+   height: 50px;
+   float: left;
+   border-radius: 50%;
+   border: 2px solid #e1e1e1;
+  }
+  .info-card h4{
+    font-size: 18px;
+    color: rgb(10, 181, 211);
+    /*color: var(--primaryColor);*/
+    letter-spacing: var(--mainSpacing); 
+    float: left;
+    margin-left: 10px;
+    margin-top: -5px;
+  
+  }
+  .info-card p{
+      text-align: left;
+      letter-spacing: var(--mainSpacing); 
+     font-size: 16px;
+      float: left;
+  }
+  
+  .info-card .author {
+   color: var(--color-secondary);
+    margin-left: 0;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-top:10px;
+    letter-spacing: var(--mainSpacing); 
+  }
+  
+  .info-card .author .date{
+    font-size: 15px;
+    color: var(--color-secondary);
+    letter-spacing: var(--mainSpacing); 
+  }
+  .info-card .info-button {
+   float: left;
+   margin-left: 9%;  
+   margin-top: -10px;
+  }
+  
+  .info-card .info-button .btnupdate{
+   /* background: grey;*/
+    border-bottom: 2px solid var(--primaryColor);
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 10px; 
+    padding-left: 10px;
+    padding-right: 10px;
+  
+  }
+  
+  .info-card .info-button .btndelete{
+     /*background: red;*/
+   border-bottom: 2px solid red;
+   font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 10px; 
+    padding-left: 10px;
+    padding-right: 10px;
+  
+  }
+  
+  .shared-form button{
+    text-transform: uppercase;
+    border: 2px solid #e1e1e1;
+    background: rgb(10, 181, 211);
+    width: 20%;
+    padding: 8px;
+    color: var(--mainWhite);
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+  
+  }
+  .shared-form button:hover,.form.button :active{
+    color: var(--mainBlack);
+  } 
+  .shared-form input{
+    background: var(--mainWhite);
+    width: 60%;
+    margin: 0 0 20px;
+    margin-left: -18%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+   }
+  
+  @media only screen and (min-width: 300px) and (max-width: 1200px){
+    .shared-article-page{
+      width:100%;
+      margin-bottom: 0px;
+      padding: 10px;
+      margin-top: 5px;
+     
+    }
+    .shared-form{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px; 
+    }
+    .shared-form button{
+      width:100%;
+      margin-bottom: 0px;
+    }
+    .info-card{
+      width:100%;
+      height: auto;
+    }
+    .info-card .author {
+      margin: auto; 
+      margin-bottom: 10px;
+      margin-top: 10px;
+      
+    }
+    
+    .info-card .author .date{
+    margin: auto;
+    text-align: center;
+    }
+  
+   /*.info-card .profile{
+  width: 40px;
+  height: 40px;
+   border-radius: 40%;
+  
+  */
+  .info-card h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: var(--mainSpacing); 
+    text-align: center;
+    margin-left: 1px;
+    margin-top: 0px;
+  }
+  
+  .info-card .info-button {
+    float: none;
+    margin-left: 0;  
+    margin-top: -10px;
+    margin-bottom: 10px;
+   }
+  
+  }
+  
+  
+  
+  

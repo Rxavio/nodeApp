@@ -1,0 +1,142 @@
+:root {
+  --primaryColor: rgb(40, 106, 247);
+  --mainWhite: #ffffff;
+  --mainGrey: #ececec;
+  --mainBlack: #000000;
+  --color-primary: #263238;
+  --color-secondary: darkgrey;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all .5s ease;
+  }
+
+a{
+    text-decoration: none;
+    color: var(--mainBlack);
+  }
+
+.edit-article-page{
+   background: #ffffff;
+    width: 55%;
+    height:auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+.edit-form{
+   position: relative;
+    z-index: 1;
+    background: rgb(10, 181, 211);
+    width: 100%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-sizing: border-box;
+    float:left;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+   }
+
+ .edit-form button:hover,.form.button :active{
+    color: var(--mainBlack);
+  } 
+  .edit-form input{
+    background: var(--mainWhite);
+    width: 60%;
+    margin: 0 0 20px;
+    margin-left: -18%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.edit-form h3{
+   color: var(--mainWhite);
+  }
+.info-card  {
+    height: auto;         
+    box-sizing: border-box; 
+    padding: 45px 10px;
+    width: 100%;
+    text-align: center; 
+    background: var(--mainWhite);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.info-card img{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px solid rgb(10, 181, 211);
+}
+.info-card h4 {
+  color: var(--mainBlack);
+  letter-spacing: var(--mainSpacing); 
+  font-size: 15px;
+  }
+
+  .info-card input{
+  letter-spacing: var(--mainSpacing); 
+  background: var(--mainWhite);
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #e1e1e1;
+  outline: 0;
+  border-radius: 10px;
+ 
+}
+
+.info-card button{
+   text-transform: uppercase;
+    border: 2px solid #e1e1e1;
+    background: rgb(10, 181, 211);
+    width: 20%;
+    padding: 8px;
+    color: var(--mainWhite);
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+  
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1200px){
+
+  .edit-article-page
+  {
+    width:100%;
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  .edit-form{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px; 
+  }
+  .info-card{
+    width:100%
+  }
+
+  .info-card button{
+  width: 100%; 
+}
+  
+
+}
+
+
+
+
+
+
+
+

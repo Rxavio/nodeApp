@@ -1,3 +1,6 @@
+const dotenv=require('dotenv');
+dotenv.config();
+
 module.exports = {
-    mongoDbUrl:'mongodb://localhost:27017/cms-blog'
+    mongoDbUrl:process.env.DATABASE_URL
 }

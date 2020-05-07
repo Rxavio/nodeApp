@@ -1,0 +1,23 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-color:rgb(10, 181, 211);
+}
+#particles-js{
+	background-size:cover;
+	height:100%;
+}
+.info-card{
+    height: auto;         
+    box-sizing: border-box; 
+    padding: 45px 30px;
+    width: 100%;
+    text-align: center; 
+    background: var(--mainWhite);
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 10px;
+  
+  }
