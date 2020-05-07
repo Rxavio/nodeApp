@@ -33,11 +33,13 @@ app.use(bodyParser.json());
 
 
 //load routes
+const main=require('./routes/home/main');
 const home=require('./routes/home/index');
 
 
 //use routes
-app.use('/', home);
+app.use('/', main);
+app.use('/home', home);
 
 
 
