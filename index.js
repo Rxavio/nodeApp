@@ -32,6 +32,17 @@ app.use(bodyParser.json());
 
 
 
+//load routes
+const home=require('./routes/home/index');
+
+
+//use routes
+app.use('/', home);
+
+
+
+
+
 
 
 
