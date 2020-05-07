@@ -70,25 +70,20 @@ router.get('/logout', (req, res)=>{
 });
 
 
-
-
-
-
-
-
 router.post('/register', (req, res)=>{
 
 let errors = [];
 if(req.body.password !== req.body.password2) {
 
 errors.push({message: "Password fields don't match"});
+// console.log(errors);
 
 }
 if(errors.length > 0){
 
 res.render('home/register', {
     errors: errors,
-    userame: req.body.username,
+    username: req.body.username,
     email: req.body.email,
 
 })
@@ -106,7 +101,6 @@ User.findOne({email: req.body.email}).then(user=>{
                 newUser.password = hash;
                 newUser.save().then(savedUser=>{
                     req.flash('success_message', 'You are now registered, please login')
-                    console.log(newUser);
                     res.redirect('/home/login');
                 });
             })
@@ -114,8 +108,7 @@ User.findOne({email: req.body.email}).then(user=>{
     } else {
 
        req.flash('error_message', 'That email exist please login');
-      console.log('error_message', 'That email exist please login');
-        res.redirect('/home/login');
+           res.redirect('/home/login');
 
     }
 });
