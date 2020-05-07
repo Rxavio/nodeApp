@@ -5,9 +5,14 @@ const path=require('path');
 const exphbs  = require('express-handlebars');
 const bodyParser=require('body-parser');
 const dotenv=require('dotenv');
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
+
+
+
+
 dotenv.config();
-
-
 const app=express();
 const port = process.env.PORT;
 
@@ -29,6 +34,29 @@ app.set('view engine', 'handlebars');
 //body parser
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+
+app.use(session({
+    secret: 'xavier123nodeblog',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(flash());
+
+// PASSPORT
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// Local Variables using Middleware
+app.use((req, res, next)=>{
+    res.locals.success_message = req.flash('success_message');
+    next();
+});
+
+
+
+
 
 
 
