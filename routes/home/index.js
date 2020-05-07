@@ -63,6 +63,15 @@ router.post('/login', (req, res, next)=>{
    })(req, res, next);
 });
 
+router.get('/logout', (req, res)=>{
+    req.logOut();
+    res.redirect('/home/login');
+
+});
+
+
+
+
 
 
 
