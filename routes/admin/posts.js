@@ -4,8 +4,9 @@ const Post=require('../../models/Post');
 const User=require('../../models/User');
 const { isEmpty, uploadDir } = require('../../helpers/upload-helper');
 const fs = require('fs');
+const {userAuthenticated} = require('../../helpers/authentication');
 
-router.all('/*',(req,res,next)=>{
+router.all('/*',userAuthenticated,(req,res,next)=>{
     req.app.locals.layout='admin';
     next();
     });
@@ -56,7 +57,7 @@ file: filename
 
 req.flash('success_message', 'Post was successfully saved');
 
-res.redirect('/admin/all-posts');
+res.redirect('/admin/my-posts');
 
 }).catch(error=>{
 console.log('could not save post');
