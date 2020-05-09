@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const User = require('../../models/User');
+const Post  = require('../../models/Post');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -11,9 +12,20 @@ router.all('/*',(req,res,next)=>{
     });
 
 
-router.get('/',(req,res)=>{
-    res.render('home/'); 
+// router.get('/',(req,res)=>{
+//     Post.find({}).sort({_id:-1}).then(posts =>{ 
+//         res.render('home/', {posts: posts,
+            
+//         });
+//     });
+// });
+
+router.get('/', (req, res)=>{
+
+  Post.find({}).then(posts=>{
+    res.render('home/', {posts: posts});
     });
+});
 
 router.get('/register',(req,res)=>{
     res.render('home/register'); 

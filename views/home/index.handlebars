@@ -2,32 +2,23 @@
 <div class="shared-form">
     <h3>Shared Posts</h3> 
 
+ {{#each posts}}
 <div class="info-card">
-    <img class="profile" src="./assets/images/adm.jpg"><br>
-<a href="#"><h4>The Benefits of Online Collaboration Tools</h4></a><br>
+     <img class="profile" src="./assets/images/adm.jpg"><br>
+<a href="#"><h4>{{title}} &rarr;</h4></a><br>
 <hr>
-<p>
-Teamwork is one of the most important aspects of the modern workplace. However, widespread Internet availability means that members of the team could be just about anywhere in the world. So for teamwork to be effective, it’s important for companies to adopt modern work practices and technologies that help co-workers, wherever they are, share their work in a simple and efficient way. This is where a good online collaboration tool comes in. If you’re contemplating adopting--or proposing the adoption of--online collaboration tools, the list of online collaboration benefits below may help you and your organization make a decision on this useful technology.
-</p> 
-<img src="./assets/images/house7.jpg">
-<div class="more">
-<h5 class="author">Written By Xavio <i class="date">06/09/2019</i></h5>
-</div>      
-</div>
+<p>{{body}}</p> 
+<img src="/uploads/{{file}}">
 
-<div class="info-card">
-    <img class="profile" src="./assets/images/adm.jpg"><br>
-<a href="#"><h4>The Benefits of Online Collaboration Tools</h4></a><br>
-<hr>
-<p>
-Teamwork is one of the most important aspects of the modern workplace. However, widespread Internet availability means that members of the team could be just about anywhere in the world. So for teamwork to be effective, it’s important for companies to adopt modern work practices and technologies that help co-workers, wherever they are, share their work in a simple and efficient way. This is where a good online collaboration tool comes in. If you’re contemplating adopting--or proposing the adoption of--online collaboration tools, the list of online collaboration benefits below may help you and your organization make a decision on this useful technology.
-</p> 
-    <img src="./assets/images/img-1.jpeg">
 <div class="more">
-<h5 class="author">Written By Xavio <i class="date">06/09/2019</i></h5>
+<h5 class="author">Written By Xavio <i class="date">{{generateDate date "MMMM Do YYYY"}}</i></h5>
+
+  
 </div>  
-
 </div>
+ {{/each}}
+
+
 
 </div>
 
