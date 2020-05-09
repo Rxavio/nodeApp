@@ -9,6 +9,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const upload = require('express-fileupload');
+const methodOverride = require('method-override');
 
 
 
@@ -28,11 +29,14 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 //set view engine
-//set view engine
-
 const {generateDate} = require('./helpers/handlebars-helpers');
 app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: { generateDate: generateDate}}));
 app.set('view engine', 'handlebars');
+
+
+
+// Method Override
+app.use(methodOverride('_method'));
 
 
 //body parser

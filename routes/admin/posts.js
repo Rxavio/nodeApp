@@ -74,6 +74,24 @@ router.get('/all-posts',(req,res)=>{
     });
     });
 
+router.get('/my-posts',(req,res)=>{
+    Post.find({}).sort({_id:-1}).then(posts=>{
+        res.render('admin/my-posts', {posts: posts});
+    });
+    });   
+    router.delete('/:id', (req, res)=>{
+
+     Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
+            req.flash('success_message', 'Post was successfully deleted');
+            res.redirect('/admin/my-posts');
+                    });
+                });
+    
+    
+
+
+
+
 
 
     
