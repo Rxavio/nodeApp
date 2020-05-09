@@ -56,7 +56,7 @@ file: filename
 
 req.flash('success_message', 'Post was successfully saved');
 
-res.redirect('/admin');
+res.redirect('/admin/all-posts');
 
 }).catch(error=>{
 console.log('could not save post');
@@ -67,6 +67,12 @@ console.log('could not save post');
 });
 
 });
+
+router.get('/all-posts',(req,res)=>{
+    Post.find({}).sort({_id:-1}).then(posts=>{
+        res.render('admin/all-posts', {posts: posts});
+    });
+    });
 
 
 

@@ -28,7 +28,10 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 //set view engine
-app.engine('handlebars', exphbs({defaultLayout: 'home'}));
+//set view engine
+
+const {generateDate} = require('./helpers/handlebars-helpers');
+app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: { generateDate: generateDate}}));
 app.set('view engine', 'handlebars');
 
 
@@ -79,7 +82,7 @@ const posts=require('./routes/admin/posts');
 app.use('/', main);
 app.use('/home', home);
 app.use('/admin', admin);
-app.use('/admin/', posts);
+app.use('/admin', posts);
 
 
 

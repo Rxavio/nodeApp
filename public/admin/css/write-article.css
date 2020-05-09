@@ -68,6 +68,7 @@ color: rgb(10, 181, 211);
     cursor: pointer;
     margin-top: 20px;
     border-radius: 10px;
+    outline: none;
 }
 .article-form button:hover,.form.button :active{
     color: var(--mainBlack);

@@ -1,0 +1,35 @@
+  <div class="container"> 	
+    <div class="post-list"> 
+    <table class="centerTable">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Allow Comments</th>
+            <th>Date</th>
+             <th>View Post</th>
+            
+          </tr>
+        </thead>
+
+
+<tbody>
+ {{#each posts}}
+<tr>
+  <td scope="row" data-label="post id">{{id}}</td>
+  <td data-label="file"><img src="/uploads/{{file}}"alt='image' width='70' height='85'></td>
+  <td data-label="title">{{title}}</td>
+  <td data-label="status">{{status}}</td>
+  <td data-label="allowcomment">{{allowComments}}</td>
+   <td data-label="Created">{{generateDate date 'MMMM Do YYYY'}}</td>
+   <td data-label="Preview"><a href="">View Post</a></td>
+</tr>
+   {{/each}}
+
+       
+        </tbody>
+      </table>       
+</div>
+</div>
