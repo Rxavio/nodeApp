@@ -10,19 +10,8 @@ router.all('/*',(req,res,next)=>{
     req.app.locals.layout='home';
     next();
     });
-
-
-// router.get('/',(req,res)=>{
-//     Post.find({}).sort({_id:-1}).then(posts =>{ 
-//         res.render('home/', {posts: posts,
-            
-//         });
-//     });
-// });
-
 router.get('/', (req, res)=>{
-
-  Post.find({}).then(posts=>{
+    Post.find({}).sort({_id:-1}).then(posts =>{ 
     res.render('home/', {posts: posts});
     });
 });

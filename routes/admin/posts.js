@@ -76,7 +76,8 @@ router.get('/all-posts',(req,res)=>{
     });
 
 router.get('/my-posts',(req,res)=>{
-    Post.find({}).sort({_id:-1}).then(posts=>{
+    Post.find({user: req.user.id}).sort({_id:-1}) 
+    .then(posts=>{
         res.render('admin/my-posts', {posts: posts});
     });
     });   
