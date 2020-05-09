@@ -15,7 +15,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    posts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'posts'
+    }],
 
-});
+}, {usePushEach: true});
 
 module.exports = mongoose.model('users', UserSchema);

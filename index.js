@@ -8,6 +8,7 @@ const dotenv=require('dotenv');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const upload = require('express-fileupload');
 
 
 
@@ -42,6 +43,10 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(flash());
+
+
+// Upload Middleware
+app.use(upload());
 
 // PASSPORT
 app.use(passport.initialize());

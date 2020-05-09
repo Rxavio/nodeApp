@@ -1,12 +1,23 @@
 <div class="container">
 <div class="create-article-page">
 <div class="article-form">
-<form action="" method="post">    
+<form action="/admin/addpost" method="post">
 <h3>Add a post</h3><br>
 <input type="text"placeholder="Post Title" name="title" required="" minlength="6" >
 <label class="lblphoto" for="photo">Upload Image</label>
-<input type="file"name="image" id="image">
-<textarea name="post_content"rows="10" cols="50"placeholder="write your post.." required=""minlength="30"></textarea>
+<input type="file"name="file" id="file">
+<textarea name="body"rows="10" cols="50"placeholder="write your post.." required=""></textarea>
+ 
+<select name="status" id="status">
+    <option value="">Select Status</option>
+    <option value="public">Public</option>
+    <option value="private">Private</option>
+    <option value="draft">Draft</option>
+</select>
+ 
+<label for="allowComments"class="label-checkbox">Allow Comments</label>
+<input class="checkbox" name="allowComments" type="checkbox" id="allowComments">
+<br>
 <button type="submit">PUBLISH</button>
 </form>
 </div>
