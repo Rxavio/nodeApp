@@ -1,0 +1,33 @@
+  <div class="container"> 	
+    <div class="post-list"> 
+    <table class="centerTable">
+        <thead>
+          <tr>
+             <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Profile</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{username}}</td>
+                <td>{{email}}</td>
+                 <td>user</td>
+                <td><img height="50" class="img-responsive" src="" alt=""></td>
+                 
+                
+              </tr>
+            {{/each}}
+
+        </tbody>
+
+
+
+      </table>       
+</div>
+</div>

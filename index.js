@@ -80,6 +80,7 @@ const main=require('./routes/home/main');
 const home=require('./routes/home/index');
 const admin=require('./routes/admin/index');
 const posts=require('./routes/admin/posts');
+const users=require('./routes/admin/users');
 
 
 //use routes
@@ -87,6 +88,7 @@ app.use('/', main);
 app.use('/home', home);
 app.use('/admin', admin);
 app.use('/admin', posts);
+app.use('/admin', users);
 
 
 
