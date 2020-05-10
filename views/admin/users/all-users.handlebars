@@ -19,7 +19,13 @@
                 <td>{{email}}</td>
                  <td>user</td>
                 <td><img height="50" class="img-responsive" src="" alt=""></td>
-                
+
+                <td>
+                <form action="/admin/users/{{id}}?_method=DELETE" method="post">
+                <button type="submit">DELETE</button>
+                </form>
+                </td>
+                        
               </tr>
             {{/each}}
 

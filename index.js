@@ -87,8 +87,8 @@ const users=require('./routes/admin/users');
 app.use('/', main);
 app.use('/home', home);
 app.use('/admin', admin);
-app.use('/admin', posts);
-app.use('/admin', users);
+app.use('/admin/posts', posts);
+app.use('/admin/users', users);
 
 
 

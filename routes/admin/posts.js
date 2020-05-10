@@ -12,7 +12,7 @@ router.all('/*',userAuthenticated,(req,res,next)=>{
     });
 
 router.get('/addpost',(req,res)=>{
-    res.render('admin/addpost'); 
+    res.render('admin/posts/addpost'); 
     });
  
 
@@ -57,7 +57,7 @@ file: filename
 
 req.flash('success_message', 'Post was successfully saved');
 
-res.redirect('/admin/my-posts');
+res.redirect('/admin/posts/my-posts');
 
 }).catch(error=>{
 console.log('could not save post');
@@ -71,14 +71,14 @@ console.log('could not save post');
 
 router.get('/all-posts',(req,res)=>{
     Post.find({}).sort({_id:-1}).then(posts=>{
-        res.render('admin/all-posts', {posts: posts});
+        res.render('admin/posts/all-posts', {posts: posts});
     });
     });
 
 router.get('/my-posts',(req,res)=>{
     Post.find({user: req.user.id}).sort({_id:-1}) 
     .then(posts=>{
-        res.render('admin/my-posts', {posts: posts});
+        res.render('admin/posts/my-posts', {posts: posts});
     });
     });  
      
@@ -86,7 +86,7 @@ router.delete('/:id', (req, res)=>{
 
 Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
     req.flash('success_message', 'Post was successfully deleted');
-    res.redirect('/admin/my-posts');
+    res.redirect('admin/posts/my-posts');
             });
         });
 

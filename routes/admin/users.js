@@ -12,12 +12,12 @@ router.all('/*',userAuthenticated,(req,res,next)=>{
 
 router.get('/all-users',(req,res)=>{
     User.find({}).sort({_id:-1}).then(users=>{
-        res.render('admin/all-users', {users: users});
+        res.render('admin/users/all-users', {users: users});
     });
     });
 
 router.get('/adduser',(req,res)=>{
-    res.render('admin/adduser'); 
+    res.render('admin/users/adduser'); 
     });
 
 
@@ -26,7 +26,6 @@ router.post('/adduser', (req, res)=>{
 let errors = [];
 if(req.body.password !== req.body.password2) {
 errors.push({message: "Password fields don't match"});
-// console.log(errors);
 }
  else {
 User.findOne({email: req.body.email}).then(user=>{
@@ -41,19 +40,27 @@ User.findOne({email: req.body.email}).then(user=>{
                 newUser.password = hash;
                 newUser.save().then(savedUser=>{
                     req.flash('success_message', 'User Successfully Created')
-                    res.redirect('/admin/all-users');
+                    res.redirect('/admin/users/all-users');
                 });
             })
         });
     } else {
 
         req.flash('error_message', 'That email exist please try a new again');
-            res.redirect('/admin/adduser');
+            res.redirect('/admin/users/adduser');
 
     }
 });
 }
-});   
+});  
+     
+router.delete('/:id', (req, res)=>{
+  User.deleteOne({_id: req.params.id}).then(userRemoved=>{
+        req.flash('success_message', 'User was successfully deleted');
+        res.redirect('/admin/users/all-users');
+                });
+            });
+    
 
     
 
