@@ -80,15 +80,16 @@ router.get('/my-posts',(req,res)=>{
     .then(posts=>{
         res.render('admin/my-posts', {posts: posts});
     });
-    });   
-    router.delete('/:id', (req, res)=>{
+    });  
+     
+router.delete('/:id', (req, res)=>{
 
-     Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
-            req.flash('success_message', 'Post was successfully deleted');
-            res.redirect('/admin/my-posts');
-                    });
-                });
-    
+Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
+    req.flash('success_message', 'Post was successfully deleted');
+    res.redirect('/admin/my-posts');
+            });
+        });
+
     
 
 
