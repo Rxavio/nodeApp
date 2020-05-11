@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 //set view engine
-const {generateDate} = require('./helpers/handlebars-helpers');
-app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: { generateDate: generateDate}}));
+const {select, generateDate} = require('./helpers/handlebars-helpers');
+app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: {select: select, generateDate: generateDate}}));
 app.set('view engine', 'handlebars');
 
 

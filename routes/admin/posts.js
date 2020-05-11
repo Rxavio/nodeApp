@@ -90,6 +90,44 @@ Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
             });
         });
 
+
+router.get('/editpost/:id', (req, res)=>{
+    Post.findOne({_id: req.params.id})
+        .then(post=>{ 
+  res.render('admin/posts/editpost',{post: post});
+
+  });
+});
+// POST UPDATING
+router.put('/editpost/:id', (req, res)=>{
+    Post.findOne({_id: req.params.id})
+        .then(post=>{
+            if(req.body.allowComments){
+                allowComments = true;
+            } else{
+                allowComments = false;
+            }
+            post.user = req.user.id;
+            post.title = req.body.title;
+            post.status = req.body.status;
+            post.allowComments = allowComments;
+            post.body = req.body.body;
+            if(!isEmpty(req.files)){
+                let file = req.files.file;
+                filename = Date.now() + '-' + file.name;
+                post.file = filename;
+                file.mv('./public/uploads/' + filename, (err)=>{
+                    if(err) throw err;
+                });
+            }
+         post.save().then(updatedPost=>{
+          console.log('Post was successfully updated');
+         res.redirect('/admin/posts/my-posts');
+            });
+        });
+});
+     
+
     
 
 

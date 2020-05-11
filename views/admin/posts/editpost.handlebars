@@ -1,0 +1,30 @@
+<div class="container">
+<div class="create-article-page">
+<div class="article-form">
+<form action="/admin/posts/editpost/{{post.id}}?_method=PUT" method="post" enctype="multipart/form-data">
+<h3>Update This Post</h3><br>
+<input type="text"name="title" required="" minlength="6" value="{{post.title}}" >
+<label class="lblphoto" for="photo">Change Image</label>
+<input type="file"name="file" id="file">
+
+<img src="/uploads/{{post.file}}"alt='image' width='60' height='40'>
+
+
+<textarea name="body"rows="10" cols="50" required="">{{post.body}}</textarea>
+ 
+<select name="status" id="status">
+    {{#select post.status}}
+    <option value="public">Public</option>
+    <option value="private">Private</option>
+    <option value="draft">Draft</option>
+     {{/select}}
+</select>
+ 
+<label for="allowComments"class="label-checkbox">Allow Comments</label>
+<input class="checkbox" name="allowComments" type="checkbox" id="allowComments" {{#if post.allowComments}} checked="checked"{{/if}} >
+<br>
+<button type="submit">update</button>
+</form>
+</div>
+</div>
+</div>

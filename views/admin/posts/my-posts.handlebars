@@ -26,7 +26,7 @@
    <td data-label="Created">{{generateDate date 'MMMM Do YYYY'}}</td>
    <td data-label="Preview"><a href="">View Post</a></td>
 
-   <td><button><a href="">Edit</a></button></td>
+   <td><button><a href="/admin/posts/editpost/{{id}}">Edit</a></button></td>
   <td>
 <form action="/admin/posts/{{id}}?_method=DELETE" method="post">
 <button type="submit">DELETE</button>
