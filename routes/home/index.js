@@ -16,6 +16,18 @@ router.get('/', (req, res)=>{
     });
 });
 
+router.get('/post-details/:id',(req,res)=>{
+    Post.findOne({_id:req.params.id})
+    .then(post=>{ 
+        res.render('home/post-details', {post: post});
+    
+    }); 
+    });
+    
+
+
+
+
 router.get('/register',(req,res)=>{
     res.render('home/register'); 
     });
