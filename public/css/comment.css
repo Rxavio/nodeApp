@@ -1,0 +1,252 @@
+:root {
+    --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainGrey: #ececec;
+    --mainBlack: #000000;
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
+    }
+  
+
+  a{
+    text-decoration: none;
+    color: var(--mainBlack);
+  
+  }
+  
+  .info-card  {
+    height: auto;         
+    box-sizing: border-box; 
+    padding: 45px 10px;
+    width: 100%;
+    text-align: center; 
+    padding: 10px 10px;
+    background: var(--mainWhite);
+    margin-top: 10px;
+    border-radius: 10px;
+    outline: 0; 
+  }
+ 
+  .info-card p{
+      text-align: left;
+      letter-spacing: var(--mainSpacing); 
+  }
+  
+  .info-card .author {
+    margin-top:10px;
+    color: var(--color-secondary);
+    margin-left: 55%;
+    margin-bottom: 0px;
+    letter-spacing: var(--mainSpacing); 
+  }
+  
+  .info-card .author .date{
+    margin-top:10px;
+    color: var(--color-secondary);
+    letter-spacing: var(--mainSpacing); 
+  
+  }
+  .comment .addcomment{
+    width: 60%;
+   height: auto; 
+   /* background: var(--mainGrey); */
+   border-radius: 10px;
+   margin-bottom: 5px;
+   border: 1px solid #e1e1e1;
+  }
+  .comment .addcomment textarea{
+    width: 90%;
+    height: 70px;
+    border-radius: 10px;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px; 
+    outline: 0;
+}
+  .comment .addcomment button{
+   cursor: pointer;
+   margin-top: 1px;
+   margin-bottom: 5px;  
+  }
+  .comment h4{
+    float: left;
+    margin-left: 25px;
+    color: rgb(10, 181, 211);
+    margin-top: 5px;
+  }
+  
+  .comment{
+    background: var(--mainWhite);
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    padding: 12px;
+    outline: 0;
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+  
+  }
+  
+  
+  .comment button{
+    letter-spacing: var(--mainSpacing); 
+    color: var(--mainWhite);
+    width: 25%;
+    outline: 0;
+    border:none;
+    background: rgb(10, 181, 211);
+  }
+  
+  .comment-posted .comment-author{
+  float: left;
+  text-align: left;
+  margin-right: 5px;
+  color: rgb(10, 181, 211);
+  }
+  .comment-posted p{
+    float: left;
+    text-align: left;
+    margin-bottom: auto;
+    color: var(--mainBlack);
+  }
+  
+  .comment-posted img{
+    width:14px;
+    height: 14px;
+    opacity: 0.6;
+  }
+  .comment-posted p :hover{
+    opacity: 1; 
+  }
+  .info-card img.icon{
+    margin-left: 20px;
+    width:16px;
+    height: 16px;
+    opacity: 0.6;
+    float: left;
+    margin-top: -13px;
+  }
+  
+  .info-card img .icon:hover{
+    opacity: 1;
+  }
+
+   
+  .comment-posted img{
+    width:24px;
+    height: 24px;
+    opacity: 1;
+  }
+
+  .comment-posted p{
+   margin-left: 30px;
+  }
+
+  .comment-posted{
+    background: var(--mainGrey);
+    width: auto;
+    height: 80px;
+    border-radius: 20px;
+    padding: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+/* .comment textarea{
+    letter-spacing: var(--mainSpacing); 
+    background: var(--mainWhite);
+    width: 90%;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+   margin-top: 20px;
+   
+  } */
+
+  .info-card .btnlike{
+    /* background: var(--mainGrey); */
+    border:1px solid rgb(10, 181, 211);
+    width: auto;
+    height: 30px;
+    padding: 10px;
+    color: var(--mainWhite);
+    letter-spacing: var(--mainSpacing); 
+    border-radius: 20px;
+    margin-top: -25px;
+    float: left;
+    margin-left: 5px;
+  }
+  
+  
+  .btnlike a{
+   margin-left: -15px;
+    margin-top: 10px;
+    float: left;
+  }
+  
+  .btnlike a b{
+    margin-left: 4px;
+    margin-top: -10px;
+    /* color: rgb(10, 181, 211); */
+    font-size: 14px;
+    float: left;
+     
+  }
+  .btnlike b:hover{
+    
+    width: 20%;
+     color: rgb(10, 181, 211);
+  }
+  .info-card .more{
+      border-bottom:1px solid #e1e1e1;
+      height: 35px;
+      
+  } 
+  .info-card .btnlikeicon{
+    margin: auto;
+    
+   }
+   
+
+  @media only screen and (min-width: 300px) and (max-width: 1200px){
+    
+    .info-card{
+      width:100%
+    }
+    .info-card .author {
+      margin: auto; 
+      /* margin-top: 10px; */
+      border-bottom:1px solid #e1e1e1;
+     
+    }
+    
+    .info-card .author .date{
+     margin: auto;
+    
+    }
+  
+    .comment{
+      width: auto;
+    }
+    
+
+    /* .info-card .btnlikeicon{
+     margin: auto;
+    }
+     */
+
+     .comment .addcomment button{
+      width: 50%; 
+     }
+  
+  }
+  
+  
+  
+  
+ 

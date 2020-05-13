@@ -47,7 +47,7 @@ User.findOne({email: req.body.email}).then(user=>{
     } else {
 
         req.flash('error_message', 'That email exist please try a new again');
-            res.redirect('/admin/users/adduser');
+            res.redirect('admin/users/adduser');
 
     }
 });

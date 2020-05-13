@@ -86,7 +86,7 @@ router.delete('/:id', (req, res)=>{
 
 Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
     req.flash('success_message', 'Post was successfully deleted');
-    res.redirect('admin/posts/my-posts');
+    res.redirect('/admin/posts/my-posts');
             });
         });
 
