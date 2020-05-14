@@ -10,6 +10,7 @@ router.all('/*',userAuthenticated,(req,res,next)=>{
     });
 router.get('/all-comments',(req,res)=>{
     Comment.find({}).sort({_id:-1})
+    .populate('user')
         .then(comments=>{
         res.render('admin/comments/all-comments', {comments: comments});
     });
