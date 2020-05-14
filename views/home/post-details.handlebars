@@ -38,19 +38,16 @@
 
 
 
+{{#each post.comments}}
  <div class="comment-posted">
   <i class="comment-author">                                        
   <img src="/assets/images/useravt.jpg">
    <i>rock</i><br>
-   <p> This is great </p>
+   <p> {{body}} </p>
 </div><br>
+ {{/each}}
 
- <div class="comment-posted">
-  <i class="comment-author">                                        
-  <img src="/assets/images/useravt.jpg">
-   <i>rock</i><br>
-   <p> Awesome</p>
-</div><br>
+
 
 
 
