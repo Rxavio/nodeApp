@@ -37,4 +37,16 @@ router.post('/all-comments', (req, res)=>{
 });    
 
 
+router.delete('/:id', (req, res)=>{
+    Comment.deleteOne({_id: req.params.id}).then(deleteItem=>{
+        Post.findOneAndUpdate({comments: req.params.id}, {$pull: {comments: req.params.id}}, (err, data)=>{
+            if(err) console.log(err);
+        req.flash('success_message', 'Comment successfully Deleted');
+        
+        res.redirect('/admin/comments/all-comments');
+    });
+ });
+
+});
+
  module.exports=router;

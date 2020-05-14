@@ -23,7 +23,11 @@
   <td  data-label="comments">{{body}}</td>
   <td data-label="Created"> {{generateDate date 'MMMM Do YYYY ,h:mm:ss a'}}</td>
   <td data-label="on post"><a href="">The benefits of learning coding stuffs</a></td>
-  <td data-label=""><button><a href="comments.html">Delete</a></button></td>
+   <td>
+    <form action="/admin/comments/{{id}}?_method=DELETE" method="post">
+     <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</td>
 </tr>
 {{/each}}
 
