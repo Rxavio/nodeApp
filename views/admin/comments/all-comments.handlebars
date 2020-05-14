@@ -1,0 +1,34 @@
+    <div class="container"> 	
+   <div class="post-list"> 
+    <table class="centerTable">
+        <thead>
+          <tr>
+            <th>Comment_ID</th>
+            <th> by</th>
+            <th>Email</th>
+             <th>Comments</th>
+            <th>Created</th>
+            <th>On Post</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+
+<tbody>
+   {{#each comments}}
+<tr>
+  <td scope="row" data-label="comment id">{{id}}</td>
+  <td  data-label="by">Lizzo</td>
+  <td  data-label="email"> lizzo@gmail.com </td>
+  <td  data-label="comments">{{body}}</td>
+  <td data-label="Created"> {{generateDate date 'MMMM Do YYYY ,h:mm:ss a'}}</td>
+  <td data-label="on post"><a href="">The benefits of learning coding stuffs</a></td>
+  <td data-label=""><button><a href="comments.html">Delete</a></button></td>
+</tr>
+{{/each}}
+
+   
+       </tbody>
+      </table>       
+</div>
+</div>
