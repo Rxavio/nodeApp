@@ -2,27 +2,27 @@
     <div class="container">
 	
            <div class="card"> 
-           <a href="viewposts.html">  
+           <a href="admin/posts/all-posts">  
             <div class="card-circle">
-            <h4>145</h4> 
+            <h4>{{postCount}}</h4> 
             <p>POSTS</p>
            </div>
           </a>
           </div> 
 
              <div class="card"> 
-              <a href="viewusers.html">   
+              <a href="admin/users/all-users">   
             <div class="card-circle">
-            <h4>65</h4> 
+            <h4>{{userCount}}</h4> 
             <p>USERS</p>
            </div>
              </a>
           </div> 
 
             <div class="card"> 
-            <a href="comments.html">   
+            <a href="admin/comments/all-comments">   
             <div class="card-circle">
-            <h4>245</h4> 
+            <h4>{{commentCount}}</h4> 
             <p>COMMENTS</p>
            </div>
              </a>
@@ -49,7 +49,7 @@ var myChart = new Chart(ctx, {
         labels: ['Posts', 'Users', 'Comments'],
         datasets: [{
             label: 'BLOG DATA',
-            data: [145, 65, 245],
+             data: [{{postCount}}, {{userCount}}, {{commentCount}}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
