@@ -83,12 +83,27 @@ router.get('/my-posts',(req,res)=>{
     });  
      
 router.delete('/:id', (req, res)=>{
-
-Post.deleteOne({_id: req.params.id}).then(postRemoved=>{
+    Post.findOne({_id: req.params.id})
+    .populate('comments')
+    .then(post =>{
+        fs.unlink(uploadDir + post.file, (err)=>{
+            if(!post.comments.length < 1){
+                  post.comments.forEach(comment=>{
+                  comment.remove();
+               });
+            }
+            post.remove().then(postRemoved=>{
+User.findOneAndUpdate({posts: req.params.id}, {$pull: {posts: req.params.id}}, (err, data)=>{  
+if(err) console.log(err);           
     req.flash('success_message', 'Post was successfully deleted');
     res.redirect('/admin/posts/my-posts');
             });
         });
+ });
+});
+
+});
+
 
 
 router.get('/editpost/:id', (req, res)=>{
