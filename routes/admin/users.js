@@ -55,12 +55,21 @@ User.findOne({email: req.body.email}).then(user=>{
 });  
      
 router.delete('/:id', (req, res)=>{
-  User.deleteOne({_id: req.params.id}).then(userRemoved=>{
-        req.flash('success_message', 'User was successfully deleted');
-        res.redirect('/admin/users/all-users');
-                });
+    User.findOne({_id: req.params.id})
+    .populate('posts')
+    .then(user =>{
+            if(!user.posts.length < 1){
+                user.posts.forEach(post=>{
+                  post.remove();
+               });
+            }
+            user.remove().then(userRemoved=>{
+                req.flash('success_message', 'User was successfully deleted');
+                res.redirect('/admin/users/all-users');
             });
-    
+        });
+ });
+        
 
     
 
