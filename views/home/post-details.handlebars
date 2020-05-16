@@ -10,7 +10,7 @@
 <img src="/uploads/{{post.file}}">
 
 <div class="more">
-<h5 class="author">Written By Xavio <i class="date">{{generateDate date "MMMM Do YYYY"}}</i></h5> 
+<h5 class="author">Written By {{post.user.username}} <i class="date">{{generateDate date "MMMM Do YYYY"}}</i></h5> 
   <section class="btnlike">
     <a href="#">
     <img src="/assets/fonts/thumbs-up.svg" class="icon"/> <b>110</b>
@@ -41,8 +41,8 @@
 {{#each post.comments}}
  <div class="comment-posted">
   <i class="comment-author">                                        
-  <img src="/assets/images/useravt.jpg">
-   <i>rock</i><br>
+  <img src="/uploads/{{user.file}}">
+   <i>{{user.username}}</i><br>
    <p> {{body}} </p>
 </div><br>
  {{/each}}
