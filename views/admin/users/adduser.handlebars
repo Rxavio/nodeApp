@@ -6,6 +6,8 @@
  <form action="/admin/users/adduser" method="post">	
 <input type="text" placeholder="Username" name="username"required="">
 <input type="email" placeholder="Email" name="email" required="">
+{{!-- <label class="lblphoto" for="photo">Upload Profile</label> --}}
+<input type="hidden"name="file" id="file">
 <input type="password" placeholder="password" name="password">	
 <input type="password" placeholder="Confirm password" name="password2">						
 <button type="submit" >Register</button>

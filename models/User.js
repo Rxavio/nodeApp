@@ -3,6 +3,14 @@ const Schema  = mongoose.Schema;
 
 const UserSchema = new Schema({
     
+    firstname:{
+        type: String,
+        required: false
+    },
+    lastname:{
+        type: String,
+        required: false
+    },
   username:{
         type: String,
         required: true
@@ -14,6 +22,9 @@ const UserSchema = new Schema({
     password:{
         type: String,
         required: true
+    },
+    file:{
+        type: String,
     },
     posts: [{
         type: Schema.Types.ObjectId,

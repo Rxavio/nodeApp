@@ -1,0 +1,26 @@
+ <div class="container"> 
+ <div class="create-page">
+<div class="create-form">
+<form action="/admin/users/profile/{{user.id}}?_method=PUT" method="post" enctype="multipart/form-data">  
+  <h3>Profile User account</h3> <br>
+<label class="lblphoto"  for="firstname">Firstname</label>
+<input type="text"name="firstname" required="" value="{{user.firstname}}">
+<label class="lblphoto" for="firstname">Lastname</label>
+<input type="text" name="lastname"required="" value="{{user.lastname}}">
+<label class="lblphoto" for="firstname">Username</label>
+<input type="text" name="username"required="" value="{{user.username}}">
+<label class="lblphoto" for="firstname">Email</label>
+<input type="email" name="email" required="" value="{{user.email}}">
+
+<img src="/uploads/{{user.file}}"><br><br><br><br><br><br>
+ <label class="lblphoto" for="photo">Change Profile</label>
+   <input type="file" name="image" id="image">
+
+<button type="submit" name="sign-up" >Update</button>
+</form>
+
+</div>
+</div>
+
+
+</div>

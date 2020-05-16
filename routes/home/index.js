@@ -5,6 +5,8 @@ const Post  = require('../../models/Post');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const { isEmpty } = require('../../helpers/upload-helper');
+
 
 router.all('/*',(req,res,next)=>{
     req.app.locals.layout='home';
@@ -83,6 +85,14 @@ router.get('/logout', (req, res)=>{
 
 
 router.post('/register', (req, res)=>{
+    let filename = '/profile/default.jpg';
+    if(!isEmpty(req.files)){
+       let file = req.files.file;
+       filename = Date.now() + '-' + file.name;
+       file.mv('./public/uploads/' + filename, (err)=>{
+           if(err) throw err;
+       });
+   }
 
 let errors = [];
 if(req.body.password !== req.body.password2) {
@@ -107,6 +117,7 @@ User.findOne({email: req.body.email}).then(user=>{
           username: req.body.username,
            email: req.body.email,
            password: req.body.password,
+           file: filename
         });
         bcrypt.genSalt(10, (err, salt)=>{
             bcrypt.hash(newUser.password, salt, (err, hash)=>{
