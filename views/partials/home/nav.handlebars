@@ -12,14 +12,15 @@
        
 
             <ul class="nav-links">
-              <li> <a href="./write-article.html">New Article</a></li>
-               {{!-- <li> <a href="./profile.html">Profile</a></li> --}}
+
+               {{#if user}}
+              <li> <a href="/admin/posts/addpost">New Article</a></li>
                 <li><a href="/admin">Dashboard</a><li></li>
               <li><a href="/home/logout">Logout</a><li>
-
-
-               <li> <a href="./register.html">Register</a></li>
-               <li> <a href="./login.html">Login</a></li>
+                 {{else}}
+               <li> <a href="/home/register">Register</a></li>
+               <li> <a href="/home/login">Login</a></li>
+               {{/if}}
 
             </ul>
           </nav>

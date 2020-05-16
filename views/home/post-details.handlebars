@@ -27,17 +27,30 @@
 
 
 <div class="comment">
-<form action="/admin/comments/all-comments" method="post">
+
+   {{#if user}}
+
+     {{#if post.allowComments}}
 <h4>Add Comment:</h4>
 <div class="addcomment">  
+  <form action="/admin/comments/all-comments" method="post">
   <input type="hidden" value="{{post.id}}" name="id">  
   <textarea name="body" rows="10" cols="50" placeholder=""  ></textarea><br> 
   <button type="submit"class="commentbtn">Comment</button>
+  </form>
 </div>
-</form> 
+{{else}}
+Comments not allowed for this post
+  <br>
+  <br>         
+{{/if}}
+ {{else}}
+Please <a href="/home/login"><i><u>Login</u></i></a> to be able to write your comment
+<br>
+<br>
+{{/if}}
 
-
-
+<!--Display post comments-->
 {{#each post.comments}}
  <div class="comment-posted">
   <i class="comment-author">                                        
