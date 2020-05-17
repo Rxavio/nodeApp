@@ -13,10 +13,22 @@ router.all('/*',(req,res,next)=>{
     next();
     });
 router.get('/', (req, res)=>{
-    Post.find({}).sort({_id:-1}).then(posts =>{ 
-    res.render('home/', {posts: posts});
+    const perPage = 6;
+    const page = req.query.page || 1;
+    Post.find({}).sort({_id:-1}) 
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .then(posts =>{
+        Post.count().then(postCount=>{
+                res.render('home/', {
+                    posts: posts,
+                    current: parseInt(page),
+                    pages: Math.ceil(postCount / perPage)
+                });
+            });
+        });
     });
-});
+
 
 router.get('/post-details/:id',(req,res)=>{
     Post.findOne({_id:req.params.id})

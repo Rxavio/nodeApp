@@ -38,11 +38,13 @@
 </div>
 
 <div id="pagination" class="pagination">
-<a href="#"><button class="btn"id="first">1</button></a>
+
+  {{#paginate current=current pages=pages}}{{/paginate}}
+{{!-- <a href="#"><button class="btn"id="first">1</button></a>
 <a href="#"><button class="btn">2</button></a>
 <a href="#"> <button class="btn">3</button></a>
 <a href="#"><button class="btn">4</button></a>
-<a href="#"><button class="btn">5</button></a>
+<a href="#"><button class="btn">5</button></a> --}}
 </div>
 
 </div>

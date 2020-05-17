@@ -12,11 +12,9 @@ const upload = require('express-fileupload');
 const methodOverride = require('method-override');
 
 
-
-
 dotenv.config();
 const app=express();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 //db connection
 mongoose.connect(mongoDbUrl,{useNewUrlParser:true, useFindAndModify: false, useCreateIndex: true}).then(db=>{
@@ -29,8 +27,8 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 //set view engine
-const {select, generateDate} = require('./helpers/handlebars-helpers');
-app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: {select: select, generateDate: generateDate}}));
+const {select, generateDate, paginate} = require('./helpers/handlebars-helpers');
+app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: {select: select, generateDate: generateDate, paginate: paginate}}));
 app.set('view engine', 'handlebars');
 
 
@@ -45,7 +43,7 @@ app.use(bodyParser.json());
 
 
 app.use(session({
-    secret: 'xavier123nodeblog',
+    secret: process.env.sessionkey,
     resave: true,
     saveUninitialized: true
 }));
