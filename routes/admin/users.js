@@ -44,6 +44,7 @@ User.findOne({email: req.body.email}).then(user=>{
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
+            userRole: req.body.userRole,
             file: filename
         });
         bcrypt.genSalt(10, (err, salt)=>{
@@ -119,6 +120,7 @@ router.put('/profile/:id', (req, res)=>{
             user.lastname = req.body.lastname;
             user.username = req.body.username;
             user.email = req.body.email;
+            user.userRole = req.body.userRole;
            
             // if(!isEmpty(req.files)){
             //     let file = req.files.file;
@@ -134,6 +136,41 @@ router.put('/profile/:id', (req, res)=>{
             });
         });
 });
+
+router.get('/changeRole/:id',(req,res)=>{
+    User.findOne({_id: req.params.id})
+      .then(user=>{ 
+    res.render('admin/users/changeRole',{user: user});
+  
+    });
+  });
+
+  // USER UPDATING
+router.put('/changeRole/:id', (req, res)=>{
+    User.findOne({_id: req.params.id})
+        .then(user=>{
+            user.user = req.user.id;
+            user.firstname = req.body.firstname;
+            user.lastname = req.body.lastname;
+            user.username = req.body.username;
+            user.email = req.body.email;
+            user.userRole = req.body.userRole;
+           
+            // if(!isEmpty(req.files)){
+            //     let file = req.files.file;
+            //     filename = Date.now() + '-' + file.name;
+            //     user.file = filename;
+            //     file.mv('./public/uploads/' + filename, (err)=>{
+            //         if(err) throw err;
+            //     });
+            // }
+         user.save().then(updateduser=>{
+          console.log('User Role successfully changed');
+         res.redirect('/admin/users/all-users');
+            });
+        });
+});
+
 
     
 

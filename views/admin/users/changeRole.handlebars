@@ -1,0 +1,30 @@
+ <div class="container"> 
+ <div class="create-page">
+<div class="create-form">
+<form action="/admin/users/changeRole/{{user.id}}?_method=PUT" method="post" enctype="multipart/form-data">  
+  <h3>Change User Role</h3> <br>
+
+  
+<input type="hidden"name="firstname" required="" value="{{user.firstname}}">
+<input type="hidden" name="lastname"required="" value="{{user.lastname}}">
+<input type="hidden" name="username"required="" value="{{user.username}}">
+<input type="hidden" name="email" required="" value="{{user.email}}">
+
+<select name="userRole" id="userRole">
+    {{#select user.userRole}}
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+     {{/select}}
+</select>
+
+<img src="/uploads/{{user.file}}"style="display:none">
+ <input type="hidden" name="image" id="image">
+
+<button type="submit" >Change</button>
+</form>
+
+</div>
+</div>
+
+
+</div>

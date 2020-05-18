@@ -6,6 +6,9 @@
  <form action="/admin/users/adduser" method="post">	
 <input type="text" placeholder="Username" name="username"required="">
 <input type="email" placeholder="Email" name="email" required="">
+<select name="userRole" id="userRole"style="display:none">
+    <option value="user">User</option>
+</select>
 {{!-- <label class="lblphoto" for="photo">Upload Profile</label> --}}
 <input type="hidden"name="file" id="file">
 <input type="password" placeholder="password" name="password">	

@@ -130,6 +130,7 @@ User.findOne({email: req.body.email}).then(user=>{
           username: req.body.username,
            email: req.body.email,
            password: req.body.password,
+           userRole: req.body.userRole,
            file: filename
         });
         bcrypt.genSalt(10, (err, salt)=>{

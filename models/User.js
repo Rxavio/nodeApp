@@ -30,6 +30,10 @@ const UserSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'posts'
     }],
+   userRole:{
+        type: String,
+        default: 'user'
+    },
 
 }, {usePushEach: true});
 
