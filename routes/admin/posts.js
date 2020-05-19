@@ -50,6 +50,7 @@ status: req.body.status,
 allowComments: allowComments,
 body: req.body.body,
 file: filename
+
     });
     user.posts.push(newPost);
     user.save().then(savedUser=>{
@@ -70,7 +71,9 @@ console.log('could not save post');
 });
 
 router.get('/all-posts',(req,res)=>{
-    Post.find({}).sort({_id:-1}).then(posts=>{
+    Post.find({}).sort({_id:-1})
+    // .limit(5)
+    .then(posts=>{
         res.render('admin/posts/all-posts', {posts: posts});
     });
     });

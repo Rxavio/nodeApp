@@ -16,6 +16,14 @@ router.get('/all-comments',(req,res)=>{
     });
 });
 
+router.get('/my-comments', (req, res)=>{
+    Comment.find({user: req.user.id}).sort({_id:-1}) 
+    .populate('user')
+        .then(comments=>{
+        res.render('admin/comments/my-comments', {comments: comments});
+    });
+});
+
 
 
 
