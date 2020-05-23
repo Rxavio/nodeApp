@@ -36,6 +36,8 @@ router.post('/adduser', (req, res)=>{
 let errors = [];
 if(req.body.password !== req.body.password2) {
 errors.push({message: "Password fields don't match"});
+   console.log('Password fields does not match');
+   res.redirect('/admin/users/adduser');
 }
  else {
 User.findOne({email: req.body.email}).then(user=>{
@@ -58,8 +60,9 @@ User.findOne({email: req.body.email}).then(user=>{
         });
     } else {
 
-        req.flash('error_message', 'That email exist please try a new again');
-            res.redirect('admin/users/adduser');
+        req.flash('error_message','That email exist please try a new again');
+        // console.log('That email exist please try a new again');
+            res.redirect('/admin/users/adduser');
 
     }
 });

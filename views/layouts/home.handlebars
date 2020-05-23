@@ -11,7 +11,8 @@
   	 <link rel="stylesheet" href="/css/view-articles.css"/>
      <link rel="stylesheet" href="/css/comment.css"/>
      <link rel="stylesheet" href="/css/pagination.css"/>  
-      <link rel="stylesheet" href="/css/create.css"/>   
+      <link rel="stylesheet" href="/css/create.css"/> 
+        <link rel="stylesheet" href="/css/response.css"/>   
       <link rel="stylesheet" href="/css/profilehome.css"/>  
        <link rel="stylesheet" href="/css/write-articlehome.css"/>  
        <link rel="stylesheet" href="/css/footer.css"/>  
@@ -19,6 +20,16 @@
     <body>
 
         {{> home/nav}}
+
+         {{#if errors}}
+        {{#each errors}}
+         <div class="msg-error">
+         {{message}}
+         </div>
+        {{/each}}
+         {{/if}}
+
+
 
            {{>home/response-msg}}
 

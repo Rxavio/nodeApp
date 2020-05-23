@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/write-article.css">
     <link rel="stylesheet" href="/css/updatepost.css">
     <link rel="stylesheet" href="/css/profile.css">
+      <link rel="stylesheet" href="/css/response.css">
     <link rel="stylesheet" href="/css/responsive.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
@@ -39,7 +40,16 @@
   
  {{> admin/nav}}
 
- {{>home/response-msg}}
+       {{#if errors}}
+        {{#each errors}}
+         <div class="msg-error">
+         {{message}}
+         </div>
+        {{/each}}
+         {{/if}}
+
+
+           {{>home/response-msg}}
 
    {{{body}}}
 

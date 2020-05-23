@@ -56,7 +56,7 @@ router.get('/login',(req,res)=>{
 // APP LOGIN
 passport.use(new LocalStrategy({usernameField: 'email'}, (email, password, done)=>{
     User.findOne({email: email}).then(user=>{
-        if(!user) return done(null, false, {message: 'No user found'});
+        if(!user) return done(null, false, {message: 'User does not Exist'});
         bcrypt.compare(password, user.password, (err, matched)=>{
             if(err) return err;
             if(matched){
@@ -111,7 +111,7 @@ let errors = [];
 if(req.body.password !== req.body.password2) {
 
 errors.push({message: "Password fields don't match"});
-// console.log(errors);
+console.log(errors);
 
 }
 if(errors.length > 0){
@@ -137,7 +137,7 @@ User.findOne({email: req.body.email}).then(user=>{
             bcrypt.hash(newUser.password, salt, (err, hash)=>{
                 newUser.password = hash;
                 newUser.save().then(savedUser=>{
-                    req.flash('success_message', 'You are now registered, please login')
+                    req.flash('success_message', 'Account successfully created, please login')
                     res.redirect('/home/login');
                 });
             })
